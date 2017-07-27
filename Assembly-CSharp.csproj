@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\CsBackground.cs" />
+     <Compile Include="Assets\Script\CsBullet.cs" />
      <Compile Include="Assets\Script\CsEnemy.cs" />
+     <Compile Include="Assets\Script\CsExplode.cs" />
      <Compile Include="Assets\Script\CsPlayer.cs" />
      <None Include="Assets\Sound\Music.txt" />
  <Reference Include="UnityEngine.UI">

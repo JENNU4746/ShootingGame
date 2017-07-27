@@ -5,7 +5,9 @@ using UnityEngine;
 public class CsPlayer : MonoBehaviour
 {
     public const float moveSpeed = 5.0f; //움직이는 속도 정의
-                                         // Use this for initialization
+    public GameObject explosionPrefab; //폭발 Prefab
+
+    // Use this for initialization
     void Start()
     {
 
@@ -30,6 +32,10 @@ public class CsPlayer : MonoBehaviour
         //부딪힌 객체의 태그를 비교하여 적인지 판단
         if (other.gameObject.tag.Equals("Enemy"))
         {
+            //Instantiate는 객체를 하나 생성(복제)함 
+            Instantiate(explosionPrefab, //생성할 객체의 원본
+                this.transform.position, //생성될 위치. this.transform.position은 자기 자신의 위치
+                Quaternion.identity); //객체 회전값. Quaternion.identity는 회전이 적용되지 않은 값
             Destroy(other.gameObject); //적 파괴
             Destroy(this.gameObject); //자신 파괴
         }

@@ -1,0 +1,10 @@
+Music
+
+Stage1: Keiken soku - Rolemusic
+Atarashi ryushi - Rolemusic
+explode: explosion02 - LittleRobotSoundFactory
+shoot: hit00 - LittleRobotSoundFactory
+
+Font
+
+Joystix Monospace - Raymond Larabie

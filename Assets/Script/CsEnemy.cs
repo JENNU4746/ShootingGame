@@ -31,4 +31,9 @@ public class CsEnemy : MonoBehaviour {
             Quaternion.identity); //객체 회전값. Quaternion.identity는 회전이 적용되지 않은 값
         Destroy(this.gameObject); //자신 파괴
     }
+
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject); //자기 자신 삭제
+    }
 }

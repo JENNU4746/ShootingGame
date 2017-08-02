@@ -13,6 +13,9 @@ public class CsPlayer : MonoBehaviour
     const float shootDelay = 0.5f; //레이저 쏘는 주기 결정
     float shootTimer = 0; //타이머
 
+    public GameObject inGame;
+    public GameObject gameOver;
+
     // Use this for initialization
     void Start()
     {
@@ -59,6 +62,8 @@ public class CsPlayer : MonoBehaviour
                 Quaternion.identity); //객체 회전값. Quaternion.identity는 회전이 적용되지 않은 값
 //            Destroy(other.gameObject); //적 파괴
             Destroy(this.gameObject); //자신 파괴
+            gameOver.SetActive(true);
+            Destroy(inGame);
         }
     }
 

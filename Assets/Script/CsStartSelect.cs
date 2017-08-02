@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CsStartSelect : MonoBehaviour {
-    private int pointerPos = 1;
+    public int pointerPos = 1;
+    public GameObject startGame;
+    public GameObject Credit;
+    public GameObject inGame;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -17,15 +18,15 @@ public class CsStartSelect : MonoBehaviour {
             switch (pointerPos)
             {
                 case 1:
-                    changeYPos(-3.75f);
+                    changeYPos(-4.46f);
                     pointerPos = 3;
                     break;
                 case 2:
-                    changeYPos(0.75f);
+                    changeYPos(2.23f);
                     pointerPos = 1;
                     break;
                 case 3:
-                    changeYPos(-1.55f);
+                    changeYPos(2.23f);
                     pointerPos = 2;
                     break;
             }
@@ -36,29 +37,31 @@ public class CsStartSelect : MonoBehaviour {
             switch (pointerPos)
             {
                 case 1:
-                    changeYPos(-1.55f);
+                    changeYPos(-2.23f);
                     pointerPos = 2;
                     break;
                 case 2:
-                    changeYPos(-3.75f);
+                    changeYPos(-2.23f);
                     pointerPos = 3;
                     break;
                 case 3:
-                    changeYPos(0.75f);
+                    changeYPos(4.46f);
                     pointerPos = 1;
                     break;
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             switch (pointerPos)
             {
                 case 1:
-                    changeScene(1);
+                    inGame.SetActive(true);
+                    startGame.SetActive(false);
                     break;
                 case 2:
-                    changeScene(2);
+                    Credit.SetActive(true);
+                    startGame.SetActive(false);
                     break;
                 case 3:
                     Application.Quit();
@@ -71,12 +74,7 @@ public class CsStartSelect : MonoBehaviour {
     {
         Vector2 newPos; //좌표 변환을 위한 임시변수
         newPos = this.transform.position;
-        newPos.y = newYPos;
+        newPos.y += newYPos;
         this.transform.position = newPos;
-    }
-
-    void changeScene(int scene)
-    {
-        SceneManager.LoadScene(scene);
     }
 }

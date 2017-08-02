@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CsPlayer : MonoBehaviour
 {
@@ -76,10 +75,5 @@ public class CsPlayer : MonoBehaviour
             }
             shootTimer += Time.deltaTime; //쿨타임 카운트
         }
-    }
-
-    void changeScene(int scene)
-    {
-        SceneManager.LoadScene(scene);
     }
 }

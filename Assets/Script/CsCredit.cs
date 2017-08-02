@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CsCredit : MonoBehaviour {
+    public GameObject Credit;
+    public GameObject startGame;
 
 	// Use this for initialization
 	void Start () {
@@ -12,16 +13,10 @@ public class CsCredit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKey(KeyCode.KeypadEnter))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("ENTER!");
-            changeScene(0);
+            startGame.SetActive(true);
+            Credit.SetActive(false);
         }
 	}
-
-    void changeScene(int scene)
-    {
-        Debug.Log("HEY!");
-        SceneManager.LoadScene(scene);
-    }
 }
